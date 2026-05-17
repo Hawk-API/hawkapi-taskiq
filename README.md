@@ -1,6 +1,6 @@
 # hawkapi-taskiq
 
-[TaskIQ](https://taskiq-python.github.io/) integration for [HawkAPI](https://github.com/ashimov/HawkAPI). Modern async-native task queue — a lighter, async-first alternative to Celery.
+[TaskIQ](https://taskiq-python.github.io/) integration for [HawkAPI](https://github.com/Hawk-API/HawkAPI). Modern async-native task queue — a lighter, async-first alternative to Celery.
 
 ## Install
 
@@ -108,7 +108,7 @@ async def test_my_task():
 ## Development
 
 ```bash
-git clone https://github.com/ashimov/hawkapi-taskiq.git
+git clone https://github.com/Hawk-API/hawkapi-taskiq.git
 cd hawkapi-taskiq
 uv sync --extra dev
 uv run pytest -q

@@ -43,8 +43,8 @@ dev = [
 
 [project.urls]
 Homepage = "https://pypi.org/project/hawkapi-taskiq/"
-Repository = "https://github.com/ashimov/hawkapi-taskiq"
-Issues = "https://github.com/ashimov/hawkapi-taskiq/issues"
+Repository = "https://github.com/Hawk-API/hawkapi-taskiq"
+Issues = "https://github.com/Hawk-API/hawkapi-taskiq/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/hawkapi_taskiq"]
