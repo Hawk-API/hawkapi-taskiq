@@ -1,0 +1,76 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hawkapi-taskiq"
+version = "0.1.0"
+description = "TaskIQ integration for HawkAPI — modern async-native task queue, DI, scheduling, JSON-only formatter"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+authors = [
+    { name = "HawkAPI Contributors", email = "hawkapi@users.noreply.github.com" },
+]
+keywords = ["hawkapi", "taskiq", "tasks", "queue", "async", "scheduling"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Distributed Computing",
+    "Typing :: Typed",
+]
+dependencies = [
+    "hawkapi>=0.1.7",
+    "taskiq>=0.11",
+]
+
+[project.optional-dependencies]
+redis = ["taskiq-redis>=1.0"]
+nats = ["taskiq-nats>=0.5"]
+cron = ["croniter>=2.0"]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "croniter>=2.0",
+    "ruff>=0.8",
+    "pyright>=1.1",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/hawkapi-taskiq/"
+Repository = "https://github.com/ashimov/hawkapi-taskiq"
+Issues = "https://github.com/ashimov/hawkapi-taskiq/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hawkapi_taskiq"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "S"]
+ignore = ["S101", "S105", "S110", "B008", "SIM105", "SIM108", "SIM113"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S"]
+
+[tool.pyright]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+reportUnknownVariableType = false
+reportUnknownMemberType = false
+reportUnknownArgumentType = false
+reportMissingTypeStubs = false
+reportUntypedFunctionDecorator = false
+reportGeneralTypeIssues = false
