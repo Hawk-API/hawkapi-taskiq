@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hawkapi-taskiq"
-version = "0.1.0"
+version = "0.1.1"
 description = "TaskIQ integration for HawkAPI — modern async-native task queue, DI, scheduling, JSON-only formatter"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -14,7 +14,7 @@ authors = [
 ]
 keywords = ["hawkapi", "taskiq", "tasks", "queue", "async", "scheduling"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Framework :: AsyncIO",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
