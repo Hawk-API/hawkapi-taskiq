@@ -9,6 +9,8 @@ sources (see README).
 
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError, version
+
 from ._broker import create_broker
 from ._config import ALLOWED_BROKER_SCHEMES, TaskIQConfig
 from ._health import HealthReport, check_broker
@@ -17,7 +19,10 @@ from ._schedule import Scheduled
 from ._tasks import task
 from ._testing import in_memory_broker
 
-__version__ = "0.1.0"
+try:
+    __version__ = version("hawkapi-taskiq")
+except PackageNotFoundError:  # pragma: no cover - running from a source tree without install
+    __version__ = "0.0.0"
 
 __all__ = [
     "ALLOWED_BROKER_SCHEMES",
